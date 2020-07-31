@@ -43,4 +43,5 @@ TASK 1
 
 
 TASK 2. 
-
+   docker-compose up 
+    -> Adding Screenshot named as screenshot2
