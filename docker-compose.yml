@@ -1,14 +1,29 @@
 version: '3'
 services:
   redis:
-    image: dockerfile:latest
+    image: redis-kafka:1.2
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
     ports:
       - "6379"
     volumes:
       - /tmp/redis:/tmp/redis
-    restart: always 
   kafka:
-    image: dockerfile:latest
+    image: redis-kafka:1.2
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 2024M
+        reservations:
+          cpus: '2'
+          memory: 500M
     ports:
       - "9092:9092"
     environment:
