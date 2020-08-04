@@ -47,3 +47,9 @@ TASK 2.
 
    docker-compose up 
     -> Adding Screenshot named as screenshot2
+
+TASK 3. 
+   terraform.tf file is the main filr for terraform , I have not partioned the file with .tfvars file and othe resource file . It is just a main file with all variables added in the file . The app get deployed with ECS using ecs binary or helm so , I have an idea to helm so used helm as an option . after adding all the variable with the requirement . Just check the command 
+       1 .terraform init 
+       2. terraform plan ( to check the aws region , provider and resource )
+       3. terraform apply 
