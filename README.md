@@ -49,7 +49,26 @@ TASK 2.
     -> Adding Screenshot named as screenshot2
 
 TASK 3. 
+Assumptions :
+    AWS account is present with ECS configured 
+
+ explaination -> 
    terraform.tf file is the main filr for terraform , I have not partioned the file with .tfvars file and othe resource file . It is just a main file with all variables added in the file . The app get deployed with ECS using ecs binary or helm so , I have an idea to helm so used helm as an option . after adding all the variable with the requirement . Just check the command 
        1 .terraform init 
        2. terraform plan ( to check the aws region , provider and resource )
        3. terraform apply 
+    
+    for this task , the helm binary needs to be present and after that 
+         1. helm create $PACKAGE_NAME 
+         2 . it will create a hirerachy like this 
+                 ${PACKAGE_NAME}
+                    |-- Chart.yaml
+                    |-- charts
+                    |-- templates
+                    |   |-- NOTES.txt
+                    |   |-- _helpers.tpl
+                    |   |-- deployment.yaml
+                    |   |-- ingress.yaml
+                    |   `-- service.yaml
+                    `-- values.yaml
+        3. and the container to be deployed can be added in deployment.yaml 
